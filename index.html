@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Machine Mavericks - Accessibility-First Transport Navigator for Inclusive Mobility" />
+  <meta name="keywords" content="accessibility, transport, navigation, mobility, disability support, public transport" />
+  <meta name="author" content="Machine Mavericks Team" />
+  <title>Machine Mavericks | Inclusive Transport Navigator</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+    .btn-primary {
+      background-color: #010000;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background-color: #4338ca;
+    }
+    .section-heading {
+      color: #4f46e5;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    .card {
+      background-color: #fff;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .card-description {
+      color: #555;
+      margin-top: 8px;
+    }
+    .section {
+      padding: 60px 0;
+    }
+    .footer {
+      background-color: #1f2937;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .footer a {
+      color: #ffffff;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    body.dark-mode {
+    background-color: #111827;
+    color: #f9fafb;
+  }
+  @keyframes slideInUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fafafa;
+    padding: 2rem;
+    color: #333;
+  }
+  .pricing-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+  .pricing-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .price-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    cursor: pointer;
+    flex: 1 1 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+  }
+  .price-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  .price-card.selected {
+    border-color: #0078d7;
+    box-shadow: 0 0 15px #0078d7aa;
+    transform: translateY(-8px);
+  }
+  .price-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .price-amount {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #0078d7;
+  }
+  .price-desc {
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+    color: #555;
+  }
+  .compare-section {
+    margin-top: 3rem;
+    background: #fff;
+    padding: 1.8rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  .compare-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #0078d7;
+  }
+  .pros-cons {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .pros, .cons {
+    flex: 1 1 45%;
+  }
+  .pros h4, .cons h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 1.2rem;
+    color: #444;
+  }
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+  body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      padding: 2rem;
+      color: #222;
+      margin: 0;
+    }
+
+    .gallery-section {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .gallery-section h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1.8rem;
+      color: #0078d7;
+    }
+
+    .gallery-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-container {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .gallery-slider {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      will-change: transform;
+    }
+
+    .slide {
+      min-width: 250px;
+      flex-shrink: 0;
+      margin: 0 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      background: white;
+      cursor: pointer;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 160px;
+      transition: transform 0.3s ease;
+    }
+
+    .slide:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,120,215,0.8);
+      border: none;
+      color: white;
+      font-size: 2.4rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .gallery-btn:hover {
+      background: #005a9e;
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .slide {
+        min-width: 180px;
+      }
+      .slide img {
+        height: 130px;
+      }
+      .gallery-btn {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .slide {
+        min-width: 140px;
+      }
+      .slide img {
+        height: 100px;
+      }
+    }
+    .slide {
+  min-width: auto;
+  flex: 0 0 auto;
+  padding: 0;
+}
+
+.slide img {
+  height: auto;
+  width: auto;
+  max-height: 300px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+
+  </style>
+</head>
+<body>
+</style>
+
+<body>
+
+
+
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-900">
+
+  <div class="p-10 space-y-14">
+    
+      
+  
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 p-12 rounded-3xl shadow-2xl text-center space-y-6 animate-slide-in-up delay-1">
+
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold text-indigo-700">Machine Mavericks</h1>
+        <nav class="flex flex-wrap items-center gap-4 text-lg font-medium">
+          <a href="#about" class="hover:underline">About</a>
+          <a href="#services" class="hover:underline">Services</a>
+          <a href="#pricing" class="hover:underline">Pricing</a>
+          <a href="#gallery" class="hover:underline">Gallery</a>
+          <a href="#team" class="hover:underline">Team</a>
+          <a href="#contact" class="hover:underline">Contact</a>
+          <a href="#book" class="btn-primary">Book Now</a>
+        </nav>
+      </div>
+      <img src="58800636-disabled-people-are-using-the-bus-for-the-disabled.jpg" alt="Accessible transport" class="w-full h-72 object-cover rounded-3xl shadow-xl" />
+      <h2 class="text-5xl font-extrabold text-indigo-800">Accessibility-First Transport Navigator</h2>
+      <p class="text-xl max-w-3xl mx-auto">Empowering inclusive mobility. Navigate public transport with ease using tailored route planning, real-time alerts, and community support.</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section animate-slide-in-up delay-1">
+      <h2 class="section-heading">About Us</h2>
+      <p class="text-lg text-center max-w-3xl mx-auto">At MACHINE MAVERICKS, we're on a mission to transform urban transportation into a space where accessibility is not an afterthought—but the standard. We believe that every journey should begin with dignity, be fueled by independence, and arrive with confidence—regardless of physical ability. By bridging the accessibility gap, we’re working to build a world where transportation empowers people, not limits them. Through thoughtful innovation and a deep respect for human mobility, we’re reshaping cities into inclusive, welcoming environments—one ride at a time.
+
+        .</p>
+    </section>
+
+    <!-- Services Section -->
+<section id="services" class="section bg-gradient-to-br from-purple-50 to-indigo-100">
+    <h2 class="section-heading text-center mb-12">Our Services</h2>
+    <div class="grid md:grid-cols-3 gap-8 px-4 md:px-20">
+      
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transform transition duration-500 hover:scale-105">
+        <div class="flex justify-center mb-4">
+          <div class="bg-indigo-100 text-indigo-600 p-4 rounded-full">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M13 16h-1v-4h-1m1 4v-4m-1 4h1m1-4v4m-1-10a9 9 0 11-9 9 9 9 0 019-9z" />
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-indigo-700 text-center mb-2">Real-Time Alerts</h3>
+        <p class="text-gray-600 text-center">Get instant updates on elevator outages, platform changes, and disruptions so you're always informed.</p>
+      </div>
+  
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transform transition duration-500 hover:scale-105">
+        <div class="flex justify-center mb-4">
+          <div class="bg-green-100 text-green-600 p-4 rounded-full">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 8v4l3 3M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-green-700 text-center mb-2">Custom Preferences</h3>
+        <p class="text-gray-600 text-center">Choose routes based on mobility aids, vision support, auditory alerts, and more—your journey, your way.</p>
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transform transition duration-500 hover:scale-105">
+        <div class="flex justify-center mb-4">
+          <div class="bg-pink-100 text-pink-600 p-4 rounded-full">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m1-4h4m0 0V6m0 4v4m0 4h.01" />
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-pink-700 text-center mb-2">Community Insights</h3>
+        <p class="text-gray-600 text-center">Access reviews and tips from people with similar accessibility needs—and share your own experience!</p>
+      </div>
+  
+    </div>
+  </section>
+  
+
+    <!-- Pricing Section -->
+    <div class="pricing-container">
+        <h2>Choose Your Plan</h2>
+        <div class="pricing-grid">
+          <div class="price-card" data-plan="basic" onclick="selectPlan(this)">
+            <div class="price-title">Basic</div>
+            <div class="price-amount">$9.99/mo</div>
+            <div class="price-desc">Perfect for individuals starting out.</div>
+          </div>
+      
+          <div class="price-card" data-plan="standard" onclick="selectPlan(this)">
+            <div class="price-title">Standard</div>
+            <div class="price-amount">$19.99/mo</div>
+            <div class="price-desc">Ideal for small teams and frequent users.</div>
+          </div>
+      
+          <div class="price-card" data-plan="premium" onclick="selectPlan(this)">
+            <div class="price-title">Premium</div>
+            <div class="price-amount">$29.99/mo</div>
+            <div class="price-desc">Best for enterprises with advanced needs.</div>
+          </div>
+        </div>
+      
+        <div class="compare-section" id="compare-section" style="display:none;">
+          <h3>Why Choose <span id="plan-name"></span>?</h3>
+          <div class="pros-cons">
+            <div class="pros">
+              <h4>Pros</h4>
+              <ul id="pros-list"></ul>
+            </div>
+            <div class="cons">
+              <h4>Cons</h4>
+              <ul id="cons-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h2>Explore Our Accessibility Navigator Gallery</h2>
+        <div class="gallery-wrapper">
+          <button class="gallery-btn prev-btn" aria-label="Previous Slide">&#10094;</button>
+          <div class="gallery-container">
+            <div class="gallery-slider">
+              <div class="slide"><img src="https://cms.uitp.org/thumbor/fit-in/1024x/--/uploads/2020/02/Pt-trends-news-e1669989616642.jpg" alt="Wheelchair accessible ramp" /></div>
+              <div class="slide"><img src="images.jpeg" alt="Close-up of tactile paving" /></div>
+              <div class="slide"><img src="images2.jpg" alt="Accessible bus sign" /></div>
+              <div class="slide"><img src="images3.jpg" alt="Person using mobility scooter" /></div>
+              <div class="slide"><img src="images4.jpeg" alt="Person entering accessible vehicle" /></div>
+              <div class="slide"><img src="images5.jpeg" alt="Accessible street crossing button" /></div>
+              <div class="slide"><img src="images6.png" alt="Wheelchair icon on transportation sign" /></div>
+            </div>
+          </div>
+          <button class="gallery-btn next-btn" aria-label="Next Slide">&#10095;</button>
+        </div>
+      </section>
+
+    <!-- Team Section -->
+<section id="team" class="section">
+    <h2 class="section-heading">Meet Our Team</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div onclick="openProfile('ruchita')" class="cursor-pointer hover:scale-105 transition transform">
+        <img src="ruchita.jpg" alt="Ruchita" class="w-20 h-20 rounded-full mx-auto mb-2 shadow-lg" />
+        <p class="text-center font-semibold">Ruchita V Basaraddi<br><small class="text-sm text-gray-500">Team Leader</small></p>
+      </div>
+      <div onclick="openProfile('akash')" class="cursor-pointer hover:scale-105 transition transform">
+        <img src="akash.jpg" alt="Akash" class="w-20 h-20 rounded-full mx-auto mb-2 shadow-lg" />
+        <p class="text-center font-semibold">Akash R Shedabal<br><small class="text-sm text-gray-500">Team Member</small></p>
+      </div>
+      <div onclick="openProfile('natasha')" class="cursor-pointer hover:scale-105 transition transform">
+        <img src="natasha.jpg" alt="Natasha" class="w-20 h-20 rounded-full mx-auto mb-2 shadow-lg" />
+        <p class="text-center font-semibold">Natasha Ravi<br><small class="text-sm text-gray-500">Team Member</small></p>
+      </div>
+      <div onclick="openProfile('nesha')" class="cursor-pointer hover:scale-105 transition transform">
+        <img src="neshasarika.jpg" alt="Nesha" class="w-20 h-20 rounded-full mx-auto mb-2 shadow-lg" />
+        <p class="text-center font-semibold">Neshasarika M. Solapure<br><small class="text-sm text-gray-500">Team Member</small></p>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Testimonials Section -->
+<section id="testimonials" class="section">
+    <h2 class="section-heading text-center mb-10">What Our Users Say</h2>
+    <div class="relative max-w-3xl mx-auto overflow-hidden">
+      <div id="testimonial-slider" class="flex transition-transform duration-700 ease-in-out">
+        <!-- Slide 1 -->
+        <div class="min-w-full px-6 text-center">
+          <p class="text-lg italic">“Machine Mavericks helped me regain my independence. I never thought navigating transit could be this empowering.”</p>
+          <h4 class="mt-4 font-semibold text-indigo-700">— Priya S., Vision-Impaired User</h4>
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="min-w-full px-6 text-center">
+          <p class="text-lg italic">“As someone using a wheelchair, the app has been life-changing. Real-time updates are gold!”</p>
+          <h4 class="mt-4 font-semibold text-indigo-700">— Arjun M., Accessibility Advocate</h4>
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="min-w-full px-6 text-center">
+          <p class="text-lg italic">“Finally, an app that listens to the needs of the disabled community. The feedback features are incredible.”</p>
+          <h4 class="mt-4 font-semibold text-indigo-700">— Maria G., Disability Rights Speaker</h4>
+        </div>
+
+        <!-- Slide 4 -->
+  <div class="min-w-full px-6 text-center">
+    <p class="text-lg italic">“Navigating subways used to be terrifying. Now, with alerts and accessible routing, I feel safe and confident.”</p>
+    <h4 class="mt-4 font-semibold text-indigo-700">— Devansh P., Low-Vision Commuter</h4>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="min-w-full px-6 text-center">
+    <p class="text-lg italic">“It’s not just an app — it’s a movement. This is what accessibility innovation looks like.”</p>
+    <h4 class="mt-4 font-semibold text-indigo-700">— Leena K., Accessibility Consultant</h4>
+  </div>
+
+  <!-- Slide 6 -->
+  <div class="min-w-full px-6 text-center">
+    <p class="text-lg italic">“I recommended Machine Mavericks to my entire support group. Everyone deserves mobility like this.”</p>
+    <h4 class="mt-4 font-semibold text-indigo-700">— James O., Disability Support Group Leader</h4>
+  </div>
+  
+        <!-- Add more slides here -->
+      </div>
+      <!-- Slider Controls -->
+      <div class="flex justify-center gap-4 mt-6">
+        <button onclick="prevTestimonial()" class="bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600">&#8592;</button>
+        <button onclick="nextTestimonial()" class="bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600">&#8594;</button>
+      </div>
+    </div>
+  </section>
+  
+  
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2 class="section-heading">Contact Us</h2>
+      <p>Email: <a href="mailto:contact@machinemavericks.org" class="text-indigo-600 underline">contact@machinemavericks.org</a></p>
+      <form onsubmit="return handleSubmit(event)" class="space-y-4 text-left max-w-md mx-auto">
+        <input type="text" placeholder="Your Name" required class="w-full px-4 py-3 rounded-xl border border-gray-300" />
+        <input type="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-xl border border-gray-300" />
+        <textarea placeholder="Your Message" required class="w-full px-4 py-3 rounded-xl border border-gray-300" rows="4"></textarea>
+        <button type="submit" class="btn-primary w-full">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Book Now Section -->
+    <section id="book" class="section">
+      <h2 class="section-heading">Book a Consultation</h2>
+      <p>Speak with our team to plan your first accessible journey.</p>
+      <a href="mailto:bookings@machinemavericks.org" class="btn-primary">Book via Email</a>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Machine Mavericks. All rights reserved.</p>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+
+  </div>
+<!-- Profile Modal -->
+<div id="profileModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-2xl p-6 w-11/12 max-w-lg shadow-2xl relative">
+      <button onclick="closeProfile()" class="absolute top-3 right-4 text-gray-400 hover:text-black text-2xl">&times;</button>
+      <div id="profileContent">
+        <!-- Dynamic profile content will be inserted here -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript -->
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("Thanks for contacting Machine Mavericks! We'll be in touch soon.");
+      return false;
+    }
+  </script>
+<!-- Feedback Button -->
+<button onclick="toggleFeedbackModal()" class="fixed bottom-6 right-6 bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-full shadow-lg z-50">
+    Feedback
+  </button>
+  
+  <!-- Feedback Modal -->
+  <div id="feedbackModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-2xl shadow-xl max-w-md w-full relative">
+      <button onclick="toggleFeedbackModal()" class="absolute top-3 right-4 text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+      <h3 class="text-xl font-bold text-indigo-700 mb-4">Your Feedback</h3>
+      <form onsubmit="submitFeedback(event)">
+        <textarea required placeholder="Share your experience..." class="w-full border border-gray-300 rounded-lg p-3 mb-4"></textarea>
+        <button type="submit" class="btn-primary w-full">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+    function toggleFeedbackModal() {
+      const modal = document.getElementById("feedbackModal");
+      modal.classList.toggle("hidden");
+      modal.classList.toggle("flex");
+    }
+  
+    function submitFeedback(event) {
+      event.preventDefault();
+      toggleFeedbackModal();
+      alert("Thanks for your feedback!");
+    }
+  </script>
+  <script>
+    const profiles = {
+      ruchita: {
+        name: "Ruchita V Basaraddi",
+        role: "Team Leader",
+        image: "ruchita.jpg",
+        description: "Ruchita is the visionary behind Machine Mavericks. With a passion for accessible design and inclusive systems, she leads the team with empathy and purpose."
+      },
+      akash: {
+        name: "Akash R Shedabal",
+        role: "Team Member",
+        image: "akash.jpg",
+        description: "Akash focuses on backend architecture and ensures our platform runs smoothly and securely for all users, regardless of device or ability."
+      },
+      natasha: {
+        name: "Natasha Ravi",
+        role: "Team Member",
+        image: "natasha.jpg",
+        description: "Natasha is passionate about UX and accessibility standards. She ensures that our interfaces are intuitive and barrier-free for everyone."
+      },
+      nesha: {
+        name: "Neshasarika M. Solapure",
+        role: "Team Member",
+        image: "neshasarika.jpg",
+        description: "Nesha contributes with research and community outreach. She bridges the gap between users’ needs and our design decisions."
+      }
+    };
+  
+    function openProfile(member) {
+      const profile = profiles[member];
+      const modal = document.getElementById("profileModal");
+      const content = `
+        <div class="text-center space-y-4">
+          <img src="${profile.image}" alt="${profile.name}" class="w-24 h-24 rounded-full mx-auto shadow-md" />
+          <h3 class="text-2xl font-bold">${profile.name}</h3>
+          <p class="text-indigo-600 font-medium">${profile.role}</p>
+          <p class="text-gray-700">${profile.description}</p>
+        </div>
+      `;
+      document.getElementById("profileContent").innerHTML = content;
+      modal.classList.remove("hidden");
+    }
+  
+    function closeProfile() {
+      document.getElementById("profileModal").classList.add("hidden");
+    }
+  </script>
+  <script>
+    let testimonialIndex = 0;
+  
+    function updateTestimonialSlider() {
+      const slider = document.getElementById("testimonial-slider");
+      const width = slider.offsetWidth;
+      slider.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+    }
+  
+    function nextTestimonial() {
+      const total = document.querySelectorAll("#testimonial-slider > div").length;
+      testimonialIndex = (testimonialIndex + 1) % total;
+      updateTestimonialSlider();
+    }
+  
+    function prevTestimonial() {
+      const total = document.querySelectorAll("#testimonial-slider > div").length;
+      testimonialIndex = (testimonialIndex - 1 + total) % total;
+      updateTestimonialSlider();
+    }
+  
+    // Optional: Auto-slide every 6 seconds
+    setInterval(nextTestimonial, 6000);
+  </script>
+  
+  <script>
+    const planDetails = {
+      basic: {
+        name: "Basic",
+        pros: [
+          "Affordable monthly cost",
+          "Easy to use for beginners",
+          "Access to core features"
+        ],
+        cons: [
+          "Limited customer support",
+          "No team collaboration features",
+          "Basic analytics only"
+        ]
+      },
+      standard: {
+        name: "Standard",
+        pros: [
+          "Supports team collaboration",
+          "Priority customer support",
+          "Advanced analytics dashboard"
+        ],
+        cons: [
+          "Higher monthly cost",
+          "No enterprise integrations"
+        ]
+      },
+      premium: {
+        name: "Premium",
+        pros: [
+          "Full feature set with integrations",
+          "Dedicated account manager",
+          "Customizable workflows"
+        ],
+        cons: [
+          "Most expensive option",
+          "May be too complex for small teams"
+        ]
+      }
+    };
+  
+    function selectPlan(card) {
+      // Remove 'selected' from all cards
+      document.querySelectorAll('.price-card').forEach(c => c.classList.remove('selected'));
+  
+      // Add 'selected' to clicked card
+      card.classList.add('selected');
+  
+      // Show compare section
+      const planKey = card.getAttribute('data-plan');
+      const details = planDetails[planKey];
+  
+      if(details) {
+        document.getElementById('plan-name').textContent = details.name;
+        const prosList = document.getElementById('pros-list');
+        const consList = document.getElementById('cons-list');
+  
+        prosList.innerHTML = '';
+        consList.innerHTML = '';
+  
+        details.pros.forEach(pro => {
+          const li = document.createElement('li');
+          li.textContent = pro;
+          prosList.appendChild(li);
+        });
+  
+        details.cons.forEach(con => {
+          const li = document.createElement('li');
+          li.textContent = con;
+          consList.appendChild(li);
+        });
+  
+        document.getElementById('compare-section').style.display = 'block';
+        document.getElementById('compare-section').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  <script>
+    const slider = document.querySelector('.gallery-slider');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    let currentIndex = 0;
+    const slideCount = slides.length;
+
+    function updateSlider() {
+      const slideWidth = slides[0].offsetWidth + 16; // slide width + margin(8px * 2)
+      const containerWidth = document.querySelector('.gallery-container').offsetWidth;
+      const visibleSlides = Math.floor(containerWidth / slideWidth);
+      const maxIndex = slideCount - visibleSlides;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex--;
+      updateSlider();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex++;
+      updateSlider();
+    });
+
+    // Touch support for swipe on mobile devices
+    let startX = 0;
+    let isDragging = false;
+
+    slider.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    });
+
+    slider.addEventListener('touchmove', e => {
+      if (!isDragging) return;
+      const currentX = e.touches[0].clientX;
+      const diff = startX - currentX;
+
+      if (diff > 50) { // swipe left
+        currentIndex++;
+        updateSlider();
+        isDragging = false;
+      } else if (diff < -50) { // swipe right
+        currentIndex--;
+        updateSlider();
+        isDragging = false;
+      }
+    });
+
+    slider.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    window.addEventListener('resize', () => {
+      updateSlider();
+    });
+
+    // Initialize slider position on load
+    window.addEventListener('load', () => {
+      updateSlider();
+    });
+  </script>
+  
+</body>
+</html>
